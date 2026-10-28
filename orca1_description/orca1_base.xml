@@ -1,0 +1,35 @@
+
+<mujoco model="orca1_base">
+  <compiler angle="radian" meshdir="meshes" balanceinertia="true"/>
+  <!-- autolimits="true" -->
+  <option gravity="0 0 -9.81"/>
+
+  <asset>
+    <mesh name="base_mesh" file="base.stl" inertia="shell"/>
+
+    <material name="metal" rgba=".9 .95 .95 1" />
+    <material name="black" rgba="0 0 0 1" />
+    <material name="white" rgba="1 1 1 1" />
+    <material name="gray" rgba="0.671705 0.692426 0.774270 1" />
+  </asset>
+
+  <worldbody>
+    <!-- <light pos="0 0 3" dir="0 0 -1"/> -->
+
+    <!-- <geom name="floor"
+          type="plane"
+          size="2 2 0.1"
+          rgba="0.8 0.8 0.8 1"/> -->
+
+    <!-- Fixed base link -->
+    <body name="base" pos="0 0 0.0619">
+      <geom name="base_visual"
+            type="mesh"
+            mesh="base_mesh"
+            material="gray"
+            contype="0"
+            conaffinity="0"/>
+
+    </body>
+  </worldbody>
+</mujoco>
